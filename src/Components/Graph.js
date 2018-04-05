@@ -11,19 +11,13 @@ class App extends Component {
             this.setState({
                 data: this.state.data.concat(this.props.data)
             }), 1000)
-
-        this.graphHover = this.graphHover.bind(this)
-    }
-
-    graphHover(){
-        console.log("hello");
     }
 
     render() {
         return (
             <div>
                 <Sparklines data={this.state.data} limit={200}>
-                    <SparklinesLine color="#1c8cdc" onMouseMove={this.graphHover()}/>
+                    <SparklinesLine color="#1c8cdc"/>
                     <SparklinesSpots size={1}/>
                 </Sparklines>
             </div>
